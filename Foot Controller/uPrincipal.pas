@@ -4,13 +4,13 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.Menus;
 
 type
   TForm1 = class(TForm)
     pnlPrincipal: TPanel;
-    Button1: TButton;
-    procedure Button1Click(Sender: TObject);
+    SpeedButton1: TSpeedButton;
   private
     { Private declarations }
     procedure CriaBotao(qtdeBotao : Integer = 8);
@@ -29,15 +29,11 @@ type
 
 var
   Form1: TForm1;
+  viContCons: integer;
 
 implementation
 
 {$R *.dfm}
-
-procedure TForm1.Button1Click(Sender: TObject);
-begin
-  CriaBotao(8);
-end;
 
 function TForm1.CalculaAltLarBtn(qtdeBotao    : Integer;
                                  pdLarAltForm : Double): Double;
@@ -119,14 +115,20 @@ begin
      (I = (vdLeftMetade + 1)) then
   begin
     pdLeft := 0;
+    viContCons := 0;
   end
   else
   begin
-    case I of
+    viContCons := viContCons + 1;
+
+    pdLeft := viContCons * (pdLarForm / vdLeftMetade);
+
+ {  case I of
       2, 5    : pdLeft := pdLarForm / vdLeftMetade;
       3, 6    : pdLeft := 2 * (pdLarForm / vdLeftMetade);
       4, 7, 8 : pdLeft := 3 * (pdLarForm / vdLeftMetade);
     end;
+    }
   end;
 
 end;
