@@ -28,7 +28,8 @@ type
   end;
 
 var
-  Form1: TForm1;
+  Form1  : TForm1;
+  viCont : Integer;
 
 implementation
 
@@ -100,8 +101,8 @@ var
   vdLeftMetade,
   vdLefDivisão : Double;
 begin
-  vdTopMetade  := qtdeBotao / 2;
-  vdLeftMetade := qtdeBotao / 2;
+  vdTopMetade  := Round(qtdeBotao / 2);
+  vdLeftMetade := Round(qtdeBotao / 2);
   vdLefDivisão := pdLarForm  / (qtdeBotao / 2);
 
   if I <= vdTopMetade then
@@ -114,19 +115,29 @@ begin
 
   end;
 
-
   if (I = 1) or
      (I = (vdLeftMetade + 1)) then
   begin
     pdLeft := 0;
+    viCont := 1;
   end
   else
   begin
+    if viCont = 1 then
+      pdLeft := pdLarForm / vdLeftMetade
+    else if viCont = 2 then
+      pdLeft := 2 * (pdLarForm / vdLeftMetade)
+    else if viCont = 3 then
+      pdLeft := 3 * (pdLarForm / vdLeftMetade);
+
+
+    {
     case I of
       2, 5    : pdLeft := pdLarForm / vdLeftMetade;
       3, 6    : pdLeft := 2 * (pdLarForm / vdLeftMetade);
       4, 7, 8 : pdLeft := 3 * (pdLarForm / vdLeftMetade);
     end;
+    }
   end;
 
 end;

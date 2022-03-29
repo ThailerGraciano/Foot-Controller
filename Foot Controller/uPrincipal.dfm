@@ -24,10 +24,6 @@ object Form1: TForm1
     Height = 572
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 400
-    ExplicitTop = 264
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object Button1: TButton
       Left = 456
       Top = 248
