@@ -11,6 +11,7 @@ type
   TForm1 = class(TForm)
     pnlPrincipal: TPanel;
     SpeedButton1: TSpeedButton;
+    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
     procedure CriaBotao(qtdeBotao : Integer = 8);
@@ -33,6 +34,8 @@ var
 
 implementation
 
+uses
+  uConfiguracoes;
 {$R *.dfm}
 
 function TForm1.CalculaAltLarBtn(qtdeBotao    : Integer;
@@ -110,7 +113,6 @@ begin
 
   end;
 
-
   if (I = 1) or
      (I = (vdLeftMetade + 1)) then
   begin
@@ -120,17 +122,15 @@ begin
   else
   begin
     viContCons := viContCons + 1;
-
     pdLeft := viContCons * (pdLarForm / vdLeftMetade);
-
- {  case I of
-      2, 5    : pdLeft := pdLarForm / vdLeftMetade;
-      3, 6    : pdLeft := 2 * (pdLarForm / vdLeftMetade);
-      4, 7, 8 : pdLeft := 3 * (pdLarForm / vdLeftMetade);
-    end;
-    }
   end;
 
+end;
+
+procedure TForm1.SpeedButton1Click(Sender: TObject);
+begin
+  Form2 := TForm2.Create(Application);
+  Form2.ShowModal;
 end;
 
 end.
