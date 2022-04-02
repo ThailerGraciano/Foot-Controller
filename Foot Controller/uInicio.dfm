@@ -12,29 +12,29 @@ object Form3: TForm3
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  Position = poMainFormCenter
   OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
+  object pnlFundo: TPanel
     Left = 0
     Top = 0
     Width = 720
     Height = 480
     Align = alClient
-    Color = clBackground
+    Color = clWhite
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 96
-    ExplicitTop = -264
     DesignSize = (
       720
       480)
-    object SpeedButton1: TSpeedButton
+    object btnClose: TSpeedButton
       Left = 697
       Top = 0
       Width = 23
       Height = 22
       Anchors = [akTop, akRight]
+      Flat = True
       Glyph.Data = {
         F6060000424DF606000000000000360000002800000018000000180000000100
         180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
@@ -92,7 +92,60 @@ object Form3: TForm3
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
-      Transparent = False
+      OnClick = btnCloseClick
+    end
+    object pnlCentral: TPanel
+      Left = 16
+      Top = 28
+      Width = 689
+      Height = 382
+      Anchors = [akLeft, akTop, akRight, akBottom]
+      BorderStyle = bsSingle
+      Color = clCream
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clDefault
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Panel1: TPanel
+      Left = 16
+      Top = 416
+      Width = 689
+      Height = 41
+      Anchors = [akLeft, akRight, akBottom]
+      Color = clBlack
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clMenuBar
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 1
+      object btnPreset: TSpeedButton
+        Left = 1
+        Top = 1
+        Width = 687
+        Height = 39
+        Align = alClient
+        Caption = 'Preset'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clMenuBar
+        Font.Height = -19
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        OnClick = btnPresetClick
+        ExplicitLeft = 336
+        ExplicitTop = 8
+        ExplicitWidth = 23
+        ExplicitHeight = 22
+      end
     end
   end
 end

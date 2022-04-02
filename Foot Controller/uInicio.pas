@@ -8,9 +8,14 @@ uses
 
 type
   TForm3 = class(TForm)
+    pnlFundo: TPanel;
+    btnClose: TSpeedButton;
+    pnlCentral: TPanel;
     Panel1: TPanel;
-    SpeedButton1: TSpeedButton;
+    btnPreset: TSpeedButton;
     procedure FormCreate(Sender: TObject);
+    procedure btnCloseClick(Sender: TObject);
+    procedure btnPresetClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,7 +27,21 @@ var
 
 implementation
 
+uses
+  uconfiguracoes, uPrincipal;
+
 {$R *.dfm}
+
+procedure TForm3.btnCloseClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TForm3.btnPresetClick(Sender: TObject);
+begin
+  Form2 := TForm2.Create(Application);
+  Form2.ShowModal;
+end;
 
 procedure TForm3.FormCreate(Sender: TObject);
 begin

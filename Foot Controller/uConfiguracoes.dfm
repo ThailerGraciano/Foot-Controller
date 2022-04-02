@@ -12,7 +12,7 @@ object Form2: TForm2
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  Position = poDesigned
+  Position = poMainFormCenter
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -24,9 +24,5 @@ object Form2: TForm2
     Color = clGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 192
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end
