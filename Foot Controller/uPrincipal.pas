@@ -8,10 +8,8 @@ uses
   Vcl.Menus;
 
 type
-  TForm1 = class(TForm)
+  TPrincipal = class(TForm)
     pnlPrincipal: TPanel;
-    SpeedButton1: TSpeedButton;
-    procedure SpeedButton1Click(Sender: TObject);
   private
     { Private declarations }
     procedure CriaBotao(qtdeBotao : Integer = 8);
@@ -29,7 +27,7 @@ type
   end;
 
 var
-  Form1: TForm1;
+  Principal: TPrincipal;
   viContCons: integer;
 
 implementation
@@ -38,13 +36,13 @@ uses
   uConfiguracoes;
 {$R *.dfm}
 
-function TForm1.CalculaAltLarBtn(qtdeBotao    : Integer;
+function TPrincipal.CalculaAltLarBtn(qtdeBotao    : Integer;
                                  pdLarAltForm : Double): Double;
 begin
   Result := pdLarAltForm / qtdeBotao / 2;
 end;
 
-procedure TForm1.CriaBotao(qtdeBotao: Integer = 8);
+procedure TPrincipal.CriaBotao(qtdeBotao: Integer = 8);
 var
   pnlBotao    : TPanel;
   vdLarForm,
@@ -57,8 +55,8 @@ var
   vsNomeBotao : String;
 begin
 
-  vdLarForm := Form1.Width;
-  vdAltForm := Form1.Height;
+  vdLarForm := Principal.Width;
+  vdAltForm := Principal.Height;
 
   vdLarBot := vdLarForm / (qtdeBotao / 2);
   vdAltBot := vdAltForm / 2;
@@ -74,7 +72,7 @@ begin
 
     vsNomeBotao := 'btn' + InttoStr(I);
 
-    pnlBotao := TPanel.Create(Form1);
+    pnlBotao := TPanel.Create(Principal);
     pnlBotao.Name             := vsNomeBotao;
     pnlBotao.Parent           := pnlPrincipal;
     pnlBotao.Width            := Round(vdLarBot);
@@ -87,7 +85,7 @@ begin
 
 end;
 
-procedure TForm1.RetornaPosition(I,
+procedure TPrincipal.RetornaPosition(I,
                                  qtdeBotao  : Integer;
                                  pdLarForm,
                                  pdAltForm  : Double;
@@ -125,12 +123,6 @@ begin
     pdLeft := viContCons * (pdLarForm / vdLeftMetade);
   end;
 
-end;
-
-procedure TForm1.SpeedButton1Click(Sender: TObject);
-begin
-  Form2 := TForm2.Create(Application);
-  Form2.ShowModal;
 end;
 
 end.

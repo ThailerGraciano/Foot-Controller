@@ -1,4 +1,4 @@
-object Form2: TForm2
+object Configuracoes: TConfiguracoes
   Left = 0
   Top = 0
   Anchors = [akLeft, akTop, akRight, akBottom]

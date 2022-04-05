@@ -1,14 +1,13 @@
-unit uConfiguracoes;
+unit uServer;
 
 interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
 
 type
-  TConfiguracoes = class(TForm)
-    Panel1: TPanel;
+  TServer = class(TDataModule)
   private
     { Private declarations }
   public
@@ -16,7 +15,7 @@ type
   end;
 
 var
-  Configuracoes: TConfiguracoes;
+  Server: TServer;
 
 implementation
 

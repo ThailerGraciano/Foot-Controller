@@ -99,16 +99,19 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="uPrincipal.pas">
-            <Form>Form1</Form>
+            <Form>Principal</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uConfiguracoes.pas">
-            <Form>Form2</Form>
+            <Form>Configuracoes</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="uInicio.pas">
-            <Form>Form3</Form>
+            <Form>Inicio</Form>
             <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uServer.pas">
+            <Form>Server</Form>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
