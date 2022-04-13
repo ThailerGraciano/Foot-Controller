@@ -24,5 +24,23 @@ object Configuracoes: TConfiguracoes
     Color = clGray
     ParentBackground = False
     TabOrder = 0
+    object CheckListBox1: TCheckListBox
+      Left = 24
+      Top = 24
+      Width = 225
+      Height = 121
+      OnClickCheck = CheckListBox1ClickCheck
+      ItemHeight = 13
+      TabOrder = 0
+    end
+    object memLog: TMemo
+      Left = 304
+      Top = 24
+      Width = 209
+      Height = 121
+      Lines.Strings = (
+        '')
+      TabOrder = 1
+    end
   end
 end
